@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors — Material 3-style tokens ported from the design source */
+  --color-secondary-fixed: #d4e3ff;
+  --color-tertiary-fixed-dim: #c3c7cb;
+  --color-inverse-primary: #b8c4ff;
+  --color-primary-fixed-dim: #b8c4ff;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-surface-container-low: #eff4ff;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-fixed: #171c1f;
+  --color-on-error-container: #93000a;
+  --color-on-background: #0d1c2e;
+  --color-on-surface-variant: #444653;
+  --color-primary-container: #1e40af;
+  --color-surface-container-high: #dce9ff;
+  --color-secondary: #0060ac;
+  --color-surface-bright: #f8f9ff;
+  --color-background: #f8f9ff;
+  --color-on-primary-container: #a8b8ff;
+  --color-on-surface: #0d1c2e;
+  --color-on-primary: #ffffff;
+  --color-tertiary-container: #474c4f;
+  --color-on-primary-fixed: #001453;
+  --color-surface-variant: #d5e3fc;
+  --color-surface: #f8f9ff;
+  --color-error: #ba1a1a;
+  --color-on-secondary-fixed: #001c39;
+  --color-on-secondary-fixed-variant: #004883;
+  --color-surface-container-lowest: #ffffff;
+  --color-tertiary: #303539;
+  --color-surface-tint: #3755c3;
+  --color-error-container: #ffdad6;
+  --color-inverse-surface: #233144;
+  --color-primary: #00288e;
+  --color-outline-variant: #c4c5d5;
+  --color-on-primary-fixed-variant: #173bab;
+  --color-surface-container: #e6eeff;
+  --color-primary-fixed: #dde1ff;
+  --color-tertiary-fixed: #dfe3e7;
+  --color-surface-dim: #ccdbf3;
+  --color-on-tertiary-fixed-variant: #43474b;
+  --color-on-tertiary-container: #b8bcc0;
+  --color-on-secondary: #ffffff;
+  --color-outline: #757684;
+  --color-on-secondary-container: #003c70;
+  --color-secondary-container: #64a8fe;
+  --color-secondary-fixed-dim: #a4c9ff;
+  --color-surface-container-highest: #d5e3fc;
+  --color-on-error: #ffffff;
+
+  /* Border radius */
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Spacing scale */
+  --spacing-lg: 24px;
+  --spacing-margin-mobile: 16px;
+  --spacing-sm: 8px;
+  --spacing-margin-desktop: 32px;
+  --spacing-xl: 32px;
+  --spacing-base: 4px;
+  --spacing-xs: 4px;
+  --spacing-md: 16px;
+  --spacing-gutter: 16px;
+
+  /* Font families (paired with matching text-* size tokens below) */
+  --font-headline-sm: "Inter", sans-serif;
+  --font-headline-lg: "Inter", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-headline-lg-mobile: "Inter", sans-serif;
+  --font-data-mono: "JetBrains Mono", monospace;
+  --font-body-md: "Inter", sans-serif;
+  --font-label-md: "Inter", sans-serif;
+  --font-headline-md: "Inter", sans-serif;
+
+  /* Font sizes with paired line-height / letter-spacing / weight */
+  --text-headline-sm: 20px;
+  --text-headline-sm--line-height: 28px;
+  --text-headline-sm--font-weight: 600;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 700;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+
+  --text-headline-lg-mobile: 24px;
+  --text-headline-lg-mobile--line-height: 32px;
+  --text-headline-lg-mobile--font-weight: 700;
+
+  --text-data-mono: 14px;
+  --text-data-mono--line-height: 20px;
+  --text-data-mono--font-weight: 500;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-md--font-weight: 600;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 600;
+}
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes grow-bar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-outline-variant);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-outline);
+}

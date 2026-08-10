@@ -1,0 +1,154 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="utf-8">
+<title>Danh sach chuc nang he thong WMS</title>
+<!--[if gte mso 9]>
+<xml>
+<w:WordDocument>
+<w:View>Print</w:View>
+<w:Zoom>100</w:Zoom>
+<w:DoNotOptimizeForBrowser/>
+</w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page Section1 { size: 21cm 29.7cm; margin: 2cm 2cm 2cm 2cm; }
+  div.Section1 { page: Section1; }
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; line-height: 1.4; color: #1a1a1a; }
+  h1 { font-size: 20pt; color: #1F4E79; border-bottom: 2pt solid #1F4E79; padding-bottom: 6pt; margin-top: 0; }
+  h2 { font-size: 15pt; color: #1F4E79; margin-top: 22pt; margin-bottom: 4pt; border-left: 4pt solid #2E75B6; padding-left: 8pt; }
+  p { margin: 6pt 0; text-align: justify; }
+  .subtitle { font-size: 12pt; color: #555; margin-top: 0; margin-bottom: 18pt; }
+  ul { margin: 4pt 0 10pt 0; padding-left: 22pt; }
+  li { margin-bottom: 3pt; }
+  .cover-meta { font-size: 10.5pt; color: #666; margin-bottom: 4pt; }
+</style>
+</head>
+<body>
+<div class="Section1">
+
+<h1>DANH SÁCH CHỨC NĂNG HỆ THỐNG WMS</h1>
+<p class="subtitle">Warehouse Management System — Các module chức năng cần có của một hệ thống WMS chuẩn</p>
+<p class="cover-meta">Ngày lập: 10/08/2026</p>
+
+<h2>1. Quản lý danh mục dùng chung (Master Data)</h2>
+<ul>
+  <li>Quản lý sản phẩm/SKU: mã hàng, tên, quy cách đóng gói, đơn vị tính, mã vạch/barcode, hình ảnh, thuộc tính (kích thước, trọng lượng, nhiệt độ bảo quản...).</li>
+  <li>Quản lý kho, khu vực (zone), dãy (aisle), kệ (rack), tầng, ô chứa hàng (bin/location).</li>
+  <li>Quản lý nhà cung cấp (Supplier).</li>
+  <li>Quản lý khách hàng (Customer).</li>
+  <li>Quản lý đơn vị tính, quy đổi đơn vị (thùng/hộp/cái).</li>
+  <li>Quản lý nhóm hàng, danh mục hàng hóa.</li>
+</ul>
+
+<h2>2. Quản lý nhập kho (Inbound / Receiving)</h2>
+<ul>
+  <li>Tạo đơn/phiếu dự kiến nhập hàng dựa trên đơn đặt hàng (Purchase Order) hoặc nhập tay.</li>
+  <li>Quét mã vạch/QR để xác nhận số lượng, đối chiếu với đơn đặt hàng.</li>
+  <li>Kiểm tra chất lượng hàng nhập (QC) — hàng đạt, hàng lỗi, hàng trả nhà cung cấp.</li>
+  <li>Đề xuất vị trí lưu kho tự động (Put-away suggestion) dựa trên quy tắc (loại hàng, tần suất xuất, khu vực trống).</li>
+  <li>Cập nhật tồn kho tức thời sau khi nhập hoàn tất.</li>
+  <li>In nhãn mã vạch/QR cho lô hàng mới (nếu nhà cung cấp chưa có mã).</li>
+</ul>
+
+<h2>3. Quản lý xuất kho (Outbound / Fulfillment)</h2>
+<ul>
+  <li>Nhận đơn hàng xuất (bán hàng, chuyển kho, trả nhà cung cấp).</li>
+  <li>Tạo phiếu lấy hàng (Pick list) tối ưu theo tuyến đường di chuyển trong kho.</li>
+  <li>Hỗ trợ các chiến lược lấy hàng: lấy theo đơn lẻ, lấy gộp nhiều đơn (batch picking), lấy theo sóng (wave picking).</li>
+  <li>Đóng gói (Packing) — xác nhận số lượng, in phiếu đóng gói (packing slip).</li>
+  <li>Xuất kho, cập nhật tồn kho, tạo phiếu giao hàng / kết nối đơn vị vận chuyển.</li>
+  <li>Theo dõi trạng thái đơn hàng: chờ xử lý → đang lấy hàng → đang đóng gói → đã giao.</li>
+</ul>
+
+<h2>4. Quản lý tồn kho (Inventory Management)</h2>
+<ul>
+  <li>Xem tồn kho thời gian thực theo: sản phẩm, kho, vị trí, lô hàng.</li>
+  <li>Quản lý lô (batch/lot) và hạn sử dụng, hỗ trợ nguyên tắc xuất hàng FIFO (nhập trước xuất trước) / FEFO (hết hạn trước xuất trước).</li>
+  <li>Quản lý số serial cho hàng hóa cần truy xuất từng đơn vị (điện tử, thiết bị).</li>
+  <li>Cảnh báo tồn kho tối thiểu/tối đa (min-max), gợi ý đặt hàng lại (reorder point).</li>
+  <li>Khóa tồn kho tạm thời (reserved) khi có đơn hàng đang xử lý.</li>
+  <li>Lịch sử biến động tồn kho (nhập/xuất/điều chỉnh) theo từng giao dịch.</li>
+</ul>
+
+<h2>5. Quản lý vị trí kho &amp; sơ đồ kho (Location/Bin Management)</h2>
+<ul>
+  <li>Thiết lập sơ đồ kho dạng cây: Kho → Khu vực → Dãy → Kệ → Ô chứa.</li>
+  <li>Quản lý trạng thái vị trí: trống, đã sử dụng, đang khóa, đang bảo trì.</li>
+  <li>Gợi ý sắp xếp hàng hóa tối ưu (slotting) dựa trên tần suất xuất/nhập.</li>
+  <li>Hỗ trợ nhiều loại vị trí: kệ pallet, kệ nhỏ lẻ, khu vực tạm (staging), khu vực hàng lỗi/trả.</li>
+</ul>
+
+<h2>6. Kiểm kê kho (Cycle Count / Stocktake)</h2>
+<ul>
+  <li>Lập kế hoạch kiểm kê định kỳ theo khu vực hoặc toàn kho.</li>
+  <li>Kiểm kê bằng thiết bị quét mã vạch, đối chiếu số liệu hệ thống với thực tế.</li>
+  <li>Ghi nhận chênh lệch, tạo phiếu điều chỉnh tồn kho, yêu cầu phê duyệt.</li>
+  <li>Báo cáo lịch sử kiểm kê và độ chính xác tồn kho theo thời gian.</li>
+</ul>
+
+<h2>7. Điều chuyển kho nội bộ (Internal Transfer)</h2>
+<ul>
+  <li>Chuyển hàng giữa các vị trí trong cùng kho hoặc giữa các kho với nhau.</li>
+  <li>Tạo phiếu điều chuyển, theo dõi trạng thái (đang chuyển, đã nhận).</li>
+</ul>
+
+<h2>8. Quản lý trả hàng (Returns / RMA)</h2>
+<ul>
+  <li>Tiếp nhận hàng trả từ khách hàng hoặc trả về nhà cung cấp.</li>
+  <li>Kiểm tra tình trạng hàng trả (còn dùng được / hỏng / hủy).</li>
+  <li>Nhập lại kho hoặc chuyển khu vực hàng lỗi.</li>
+</ul>
+
+<h2>9. Barcode / QR / RFID</h2>
+<ul>
+  <li>Tạo và in mã vạch/QR cho sản phẩm, vị trí, lô hàng, phiếu nhập/xuất.</li>
+  <li>Hỗ trợ quét bằng máy quét chuyên dụng, hoặc camera điện thoại/máy tính bảng.</li>
+  <li>(Tùy chọn nâng cao) Tích hợp RFID để kiểm kê nhanh theo khu vực.</li>
+</ul>
+
+<h2>10. Tích hợp thiết bị tự động / AGV (tùy chọn — mở rộng)</h2>
+<ul>
+  <li>Kết nối API với hệ thống điều phối AGV/robot vận chuyển hàng trong kho.</li>
+  <li>Đồng bộ lệnh lấy hàng/di chuyển hàng cho robot dựa trên phiếu xuất/nhập.</li>
+  <li>Theo dõi trạng thái nhiệm vụ của robot (đang thực hiện, hoàn thành, lỗi).</li>
+</ul>
+
+<h2>11. Báo cáo &amp; Dashboard (BI)</h2>
+<ul>
+  <li>Dashboard tổng quan: tổng tồn kho, giá trị tồn kho, tỷ lệ lấp đầy kho, số đơn xử lý trong ngày.</li>
+  <li>Báo cáo nhập – xuất – tồn (theo ngày/tuần/tháng, theo kho, theo sản phẩm).</li>
+  <li>Báo cáo hàng tồn lâu ngày, hàng sắp hết hạn, hàng chậm luân chuyển (slow-moving).</li>
+  <li>Báo cáo hiệu suất nhân viên (số đơn xử lý, thời gian trung bình mỗi thao tác).</li>
+  <li>Xuất báo cáo ra Excel/PDF.</li>
+</ul>
+
+<h2>12. Quản lý người dùng &amp; phân quyền</h2>
+<ul>
+  <li>Tạo tài khoản, phân nhóm vai trò (role-based access control).</li>
+  <li>Phân quyền chi tiết theo module/chức năng và theo kho quản lý.</li>
+  <li>Đăng nhập, quản lý phiên làm việc, đổi mật khẩu, xác thực 2 lớp (tùy chọn).</li>
+</ul>
+
+<h2>13. Nhật ký hệ thống / Audit log</h2>
+<ul>
+  <li>Ghi lại lịch sử thao tác quan trọng: ai làm gì, khi nào, thay đổi gì (đặc biệt với tồn kho, giá, phiếu điều chỉnh).</li>
+  <li>Hỗ trợ tra cứu và truy vết khi có sai lệch số liệu.</li>
+</ul>
+
+<h2>14. Cảnh báo &amp; thông báo (Notification)</h2>
+<ul>
+  <li>Cảnh báo tồn kho thấp, hàng sắp hết hạn, đơn hàng trễ tiến độ.</li>
+  <li>Thông báo qua hệ thống, email, hoặc kết nối Zalo/Telegram (tùy chọn).</li>
+</ul>
+
+<h2>15. Cấu hình hệ thống</h2>
+<ul>
+  <li>Quản lý nhiều kho, nhiều chi nhánh (multi-warehouse).</li>
+  <li>Cấu hình quy tắc nghiệp vụ: FIFO/FEFO mặc định, quy tắc đặt hàng lại, workflow duyệt phiếu.</li>
+  <li>Cấu hình mẫu in (phiếu nhập, phiếu xuất, tem nhãn).</li>
+</ul>
+
+</div>
+</body>
+</html>
