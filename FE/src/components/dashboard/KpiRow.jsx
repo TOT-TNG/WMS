@@ -1,4 +1,4 @@
-import KpiCard from "./KpiCard";
+import KpiCard from "../common/KpiCard";
 
 const KPI_DATA = [
   {

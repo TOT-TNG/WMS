@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useAnimatedNumber } from "../hooks/useAnimatedNumber";
 
 const VEHICLES = [
   { id: "DNC 1254", deliveryDate: "5 Th5", driver: "Thuyết" },
@@ -34,22 +34,7 @@ const ACTIVITIES = [
 ];
 
 function UsageGauge({ usagePercent }) {
-  const [animatedPercent, setAnimatedPercent] = useState(0);
-
-  useEffect(() => {
-    const duration = 900;
-    const start = performance.now();
-    let frame;
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setAnimatedPercent(Math.round(eased * usagePercent));
-      if (progress < 1) frame = requestAnimationFrame(tick);
-    };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [usagePercent]);
-
+  const animatedPercent = Math.round(useAnimatedNumber(usagePercent));
   const sweepDeg = animatedPercent * 3.6;
   const gradient = `conic-gradient(from -90deg, #22d3ee 0deg, #34d399 ${sweepDeg}deg, #e2e8f0 ${sweepDeg}deg 360deg)`;
 

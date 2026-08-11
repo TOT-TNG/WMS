@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const NAV_ITEMS = [
   { to: "/", label: "Trang chủ", icon: "dashboard" },
@@ -13,11 +14,11 @@ export default function Sidebar({ warehouseName, user }) {
   return (
     <nav className="fixed left-0 top-0 h-full w-60 bg-primary dark:bg-inverse-surface flex flex-col z-40">
       <div className="p-6 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center shrink-0">
-          <span className="material-symbols-outlined text-on-secondary-container text-[20px]">warehouse</span>
+        <div className="w-14 h-14 rounded-lg bg-surface-container-lowest shrink-0 flex items-center justify-center overflow-hidden p-1.5">
+          <img src={logo} alt="TOT WMS" className="w-full h-full object-contain" />
         </div>
         <div>
-          <h1 className="font-headline-md text-xl font-bold leading-tight text-surface-container-lowest">
+          <h1 className="font-headline-md text-2xl font-bold leading-tight text-surface-container-lowest">
             TOT WMS
           </h1>
           <p className="text-base text-surface-container-lowest/70">
@@ -34,7 +35,7 @@ export default function Sidebar({ warehouseName, user }) {
             end={item.to === "/"}
             className={({ isActive }) =>
               [
-                "group flex items-center gap-3 pl-6 pr-5 py-3 text-sm font-medium transition-all duration-200",
+                "group flex items-center gap-3 pl-6 pr-5 py-3 text-lg font-medium transition-all duration-200",
                 isActive
                   ? "bg-background text-primary font-bold rounded-l-full"
                   : "text-surface-variant hover:text-surface-bright hover:bg-white/5",
@@ -44,7 +45,7 @@ export default function Sidebar({ warehouseName, user }) {
             {({ isActive }) => (
               <>
                 <span
-                  className="material-symbols-outlined text-[24px] transition-transform duration-200 group-hover:scale-110"
+                  className="material-symbols-outlined text-[28px] transition-transform duration-200 group-hover:scale-110"
                   style={isActive ? { fontVariationSettings: "'FILL' 1" } : undefined}
                 >
                   {item.icon}
